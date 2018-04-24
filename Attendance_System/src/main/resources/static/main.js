@@ -16,8 +16,7 @@ function fire_ajax_submit(){
 		url: "/aaaa",
 		data: JSON.stringify(search),
 		dataType: 'json',
-		cache: false,
-		timeout: 600000,
+		cache: true,
 		success: function(data){
 			var json = "<h4>Ajax Response</h4><pre>"
 				+ JSON.stringify(data, null, 4) + "</pre>";

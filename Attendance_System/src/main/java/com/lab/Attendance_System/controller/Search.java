@@ -24,7 +24,7 @@ public class Search {
 	}
 	
 	@PostMapping("/aaaa")
-	public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors){
+	public ResponseEntity<AjaxResponse> ResultViaAjax(@Valid @RequestBody SearchName search){
 		AjaxResponse result = new AjaxResponse();
 		
 		
