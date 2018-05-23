@@ -2,6 +2,8 @@ package com.lab.Attendance_System.controller;
 
 import java.util.List;
 
+import com.lab.Attendance_System.dao.model.Admin;
+
 public class AjaxResponse {
 	private String msg;
 	private List<Admin> result;

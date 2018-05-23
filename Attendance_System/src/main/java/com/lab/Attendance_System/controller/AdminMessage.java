@@ -8,6 +8,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
+import com.lab.Attendance_System.dao.model.Admin;
+
 
 @Service
 public class AdminMessage {
