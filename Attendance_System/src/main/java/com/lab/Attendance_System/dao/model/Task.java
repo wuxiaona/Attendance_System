@@ -11,15 +11,22 @@ public class Task {
 	
 	@Id
 	@GeneratedValue
-	private Integer tk_id;
+	private Integer task_id;
+	private String task_desc;//任务描述）
 	
 	public Integer getTkid(){
-		return tk_id;
+		return task_id;
 	}
 	
 	public void setTkid(Integer id){
-		this.tk_id=id;
+		this.task_id=id;
 	}
 	
+	public String getDesc(){
+		return task_desc;
+	}
+	public void setDesc(String desc){
+		this.task_desc=desc;
+	}
 
 }
