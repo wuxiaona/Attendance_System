@@ -1,57 +1,90 @@
 package com.lab.Attendance_System.dao.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
 public class User {
 		@Id
-		@GeneratedValue
-		public Integer user_id;
-		private boolean is_user;//是否是管理人员
-		private String user_name;
-		private String user_password;
-		private String tel;
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
+	      //采用数据库自增长的方式来增主键字段\
+		@Column(name="user_id")
+		public Integer userId;//主键策略
 		
+		@Column(name="is_user")
+		private boolean isUser;//是否是管理人员
+		
+		@Column(name="user_name")
+		private String userName;
+		
+		@Column(name="user_password")
+		private String userPassword;
+		
+		@Column(name="tel")
+		private String Tel;
+		
+		//一对多
+		@OneToMany(mappedBy="user")
+		private Set<Team> team=new HashSet<Team>();
+		
+		@OneToMany(mappedBy="user")
+		private Set<U_belong_T> u_belong_t =new HashSet<U_belong_T>();
+		
+		@OneToMany(mappedBy="user")
+		private Set<Complete_sign> complete_sign=new HashSet<Complete_sign>();
+		
+		@OneToMany(mappedBy="user")
+		private Set<Task> task=new HashSet<Task>();
+		
+		@OneToMany(mappedBy="user")
+		private Set<Complete_task> complete_task=new HashSet<Complete_task>();
+		
+
 		public User(){	
 		}
 		
 		public Integer getUid(){
-			return user_id;
+			return userId;
 		}
 		public void setUid(Integer id){
-			this.user_id=id;
+			this.userId=id;
 		}
 		
 		//布尔类型，那么其getter和setter方法为is...()和set...s()
 		public boolean isIs(){
-			return is_user;
+			return isUser;
 		}
 		public void setIs(boolean is){
-			this.is_user=is;
+			this.isUser=is;
 		}
 		
 		public String getUname(){
-			return user_name;
+			return userName;
 		}
 		public void setUname(String name){
-			this.user_name=name;
+			this.userName=name;
 		}
 		
 		public String getUpassword(){
-			return user_password;
+			return userPassword;
 		}
 		public void setUpassword(String password){
-			this.user_password=password;
+			this.userPassword=password;
 		}
 		public String getTel(){
-			return tel;
+			return Tel;
 		}
 		public void setTel(String tel){
-			this.tel=tel;
+			this.Tel=tel;
 		}
 
 }

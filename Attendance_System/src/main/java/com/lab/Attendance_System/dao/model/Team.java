@@ -1,10 +1,15 @@
 package com.lab.Attendance_System.dao.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,39 +17,50 @@ import javax.persistence.Table;
 public class Team {
 	@Id
 	@GeneratedValue
-	private Integer t_id;
-	private String t_name;
-	private Integer t_num;
+	@Column(name="t_id")
+	private Integer tId;
+	
+	@Column(name="t_name")
+	private String tName;
+	
+	@Column(name="t_num")
+	private Integer tNum;
 
 	public Team(){	
 	}
-	
-	@JoinColumn(name="user_id")
+	//多对一
 	@ManyToOne
+	@JoinColumn(name="user_id")
 	private User user;
 	
+	@OneToMany(mappedBy="team")
+	private Set<U_belong_T> U_belong_T =new HashSet<U_belong_T>();
+	
+	@OneToMany(mappedBy="team")
+	private Set<Sign> sign =new HashSet<Sign>();
+	
 	public Integer getTid(){
-		return t_id;
+		return tId;
 	}
 	
 	public void setTid(Integer id){
-		this.t_id=id;
+		this.tId=id;
 	}
 	
 	public String getTname(){
-		return t_name;
+		return tName;
 	}
 	
 	public void setTname(String name){
-		this.t_name=name;
+		this.tName=name;
 	}
 	
 	public Integer getTnum(){
-		return t_num;
+		return tNum;
 	}
 	
 	public void setTnum(Integer num){
-		this.t_num=num;
+		this.tNum=num;
 	}
 	
 	 public User getUser() {
