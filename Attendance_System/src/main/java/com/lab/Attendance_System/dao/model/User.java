@@ -48,14 +48,18 @@ public class User {
 		@OneToMany(mappedBy="user")
 		private Set<Complete_task> complete_task=new HashSet<Complete_task>();
 		
+		public User(String userName, String userPassword) {
+			this.userName = userName;
+			this.userPassword = userPassword;
+		}
 
 		public User(){	
 		}
 		
-		public Integer getUid(){
+		public Integer getUserId(){
 			return userId;
 		}
-		public void setUid(Integer id){
+		public void setUserId(Integer id){
 			this.userId=id;
 		}
 		
@@ -67,17 +71,17 @@ public class User {
 			this.isUser=is;
 		}
 		
-		public String getUname(){
+		public String getUserName(){
 			return userName;
 		}
-		public void setUname(String name){
+		public void setUserName(String name){
 			this.userName=name;
 		}
 		
-		public String getUpassword(){
+		public String getUserPassword(){
 			return userPassword;
 		}
-		public void setUpassword(String password){
+		public void setUserPassword(String password){
 			this.userPassword=password;
 		}
 		public String getTel(){

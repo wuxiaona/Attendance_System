@@ -38,37 +38,41 @@ public class Team {
 	
 	@OneToMany(mappedBy="team")
 	private Set<Sign> sign =new HashSet<Sign>();
-	
-	public Integer getTid(){
+
+	public Integer gettId() {
 		return tId;
 	}
-	
-	public void setTid(Integer id){
-		this.tId=id;
+
+	public void settId(Integer tId) {
+		this.tId = tId;
 	}
-	
-	public String getTname(){
+
+	public String gettName() {
 		return tName;
 	}
-	
-	public void setTname(String name){
-		this.tName=name;
+
+	public void settName(String tName) {
+		this.tName = tName;
 	}
-	
-	public Integer getTnum(){
+
+	public Integer gettNum() {
 		return tNum;
 	}
-	
-	public void setTnum(Integer num){
-		this.tNum=num;
-	}
-	
-	 public User getUser() {
-	     return user;
-	 }
 
-	 public void setUser(User user) {
-	     this.user = user;
-	 }
+	public void settNum(Integer tNum) {
+		this.tNum = tNum;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	
+	
+	
 
 }

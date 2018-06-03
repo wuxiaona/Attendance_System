@@ -2,11 +2,12 @@ package com.lab.Attendance_System.controller;
 
 import java.util.List;
 
-import com.lab.Attendance_System.dao.model.Admin;
+
+import com.lab.Attendance_System.dao.model.User;
 
 public class AjaxResponse {
 	private String msg;
-	private List<Admin> result;
+	private List<User> result;
 	
 	public String getMsg() {
 		return msg;
@@ -16,11 +17,11 @@ public class AjaxResponse {
 		this.msg = msg;
 	}
 	
-	public List<Admin> getResult() {
+	public List<User> getResult() {
 		return result;
 	}
 	
-	public void setResult(List<Admin> result) {
+	public void setResult(List<User> result) {
 		this.result = result;
 	}
 
