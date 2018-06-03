@@ -17,13 +17,13 @@ import javax.persistence.Table;
 public class Team {
 	@Id
 	@GeneratedValue
-	@Column(name="t_id")
+	@Column(name="team_id")
 	private Integer tId;
 	
-	@Column(name="t_name")
+	@Column(name="team_name")
 	private String tName;
 	
-	@Column(name="t_num")
+	@Column(name="team_num")
 	private Integer tNum;
 
 	public Team(){	
